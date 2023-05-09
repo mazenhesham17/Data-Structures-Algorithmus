@@ -19,7 +19,6 @@ void merge(vector <T> &arr, int l, int mid, int r) {
     }
     while (rp <= r) {
         temp[tp++] = arr[rp++];
-        tp++, rp++;
     }
     for (int i = l; i <= r; ++i) {
         arr[i] = temp[i - l];
@@ -43,6 +42,16 @@ void mergeSort(vector <T> &arr) {
 }
 
 int main() {
-
+    int len;
+    cin >> len;
+    vector<int> arr(len);
+    for (int i = 0; i < len; ++i) {
+        cin >> arr[i];
+    }
+    mergeSort(arr);
+    for (int i = 0; i < len; ++i) {
+        cout << arr[i] << ' ';
+    }
+    cout << '\n';
     return 0;
 }
